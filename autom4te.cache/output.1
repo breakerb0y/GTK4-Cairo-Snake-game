@@ -665,6 +665,8 @@ GTK_CFLAGS
 PKG_CONFIG_LIBDIR
 PKG_CONFIG_PATH
 PKG_CONFIG
+GTK_REQUIRED
+GLIB_REQUIRED
 LT_SYS_LIBRARY_PATH
 OTOOL64
 OTOOL
@@ -12594,6 +12596,12 @@ CC=$lt_save_CC
 
 
 
+GLIB_REQUIRED=2.41.2
+
+
+GTK_REQUIRED=4.6.1
+
+
 
 
 
@@ -12733,12 +12741,12 @@ if test -n "$GTK_CFLAGS"; then
     pkg_cv_GTK_CFLAGS="$GTK_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
-    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gtk4\""; } >&5
-  ($PKG_CONFIG --exists --print-errors "gtk4") 2>&5
+    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gtk4 >= \$GTK_REQUIRED\""; } >&5
+  ($PKG_CONFIG --exists --print-errors "gtk4 >= $GTK_REQUIRED") 2>&5
   ac_status=$?
   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
-  pkg_cv_GTK_CFLAGS=`$PKG_CONFIG --cflags "gtk4" 2>/dev/null`
+  pkg_cv_GTK_CFLAGS=`$PKG_CONFIG --cflags "gtk4 >= $GTK_REQUIRED" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes 
 else
   pkg_failed=yes
@@ -12750,12 +12758,12 @@ if test -n "$GTK_LIBS"; then
     pkg_cv_GTK_LIBS="$GTK_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
-    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gtk4\""; } >&5
-  ($PKG_CONFIG --exists --print-errors "gtk4") 2>&5
+    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gtk4 >= \$GTK_REQUIRED\""; } >&5
+  ($PKG_CONFIG --exists --print-errors "gtk4 >= $GTK_REQUIRED") 2>&5
   ac_status=$?
   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
-  pkg_cv_GTK_LIBS=`$PKG_CONFIG --libs "gtk4" 2>/dev/null`
+  pkg_cv_GTK_LIBS=`$PKG_CONFIG --libs "gtk4 >= $GTK_REQUIRED" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes 
 else
   pkg_failed=yes
@@ -12776,14 +12784,14 @@ else
         _pkg_short_errors_supported=no
 fi
         if test $_pkg_short_errors_supported = yes; then
-	        GTK_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "gtk4" 2>&1`
+	        GTK_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "gtk4 >= $GTK_REQUIRED" 2>&1`
         else 
-	        GTK_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "gtk4" 2>&1`
+	        GTK_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "gtk4 >= $GTK_REQUIRED" 2>&1`
         fi
 	# Put the nasty error message in config.log where it belongs
 	echo "$GTK_PKG_ERRORS" >&5
 
-	as_fn_error $? "Package requirements (gtk4) were not met:
+	as_fn_error $? "Package requirements (gtk4 >= $GTK_REQUIRED) were not met:
 
 $GTK_PKG_ERRORS
 
@@ -12817,8 +12825,6 @@ printf "%s\n" "yes" >&6; }
 fi
 
 
-
-CFLAGS="-g -O2 -Wall \${WERRORFLAG} -Wchar-subscripts -D_GNU_SOURCE -D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED -DGTK_DISABLE_DEPRECATED $CFLAGS"
 
 ac_config_files="$ac_config_files Makefile src/Makefile"
 

@@ -186,7 +186,7 @@ AUTOMAKE = ${SHELL} '/home/Toni/Desktop/GTK Snake/GTK4-Cairo-Snake-game/missing'
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -g -O2 -Wall ${WERRORFLAG} -Wchar-subscripts -D_GNU_SOURCE -D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED -DGTK_DISABLE_DEPRECATED -g -O2
+CFLAGS = -g -O2
 CPPFLAGS = 
 CSCOPE = cscope
 CTAGS = ctags
@@ -204,9 +204,11 @@ ETAGS = etags
 EXEEXT = 
 FGREP = /usr/bin/grep -F
 FILECMD = file
+GLIB_REQUIRED = 2.41.2
 GREP = /usr/bin/grep
 GTK_CFLAGS = -I/usr/include/gtk-4.0 -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/sysprof-4 -I/usr/include/harfbuzz -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/fribidi -I/usr/include/libxml2 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/graphene-1.0 -I/usr/lib64/graphene-1.0/include -mfpmath=sse -msse -msse2 -I/usr/include/gio-unix-2.0 -pthread 
 GTK_LIBS = -lgtk-4 -lpangocairo-1.0 -lpango-1.0 -lharfbuzz -lgdk_pixbuf-2.0 -lcairo-gobject -lcairo -lgraphene-1.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 
+GTK_REQUIRED = 4.6.1
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
