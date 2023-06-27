@@ -12818,6 +12818,8 @@ fi
 
 
 
+CFLAGS="-g -O2 -Wall \${WERRORFLAG} -Wchar-subscripts -D_GNU_SOURCE -D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED -DGTK_DISABLE_DEPRECATED $CFLAGS"
+
 ac_config_files="$ac_config_files Makefile src/Makefile"
 
 

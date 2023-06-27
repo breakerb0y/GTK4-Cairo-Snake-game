@@ -273,8 +273,9 @@ gboolean timeout_callback (gpointer user_data)
 								
 		}
 	}
-
-	gtk_drawing_area_set_draw_func (GTK_DRAWING_AREA (s->area), draw_function, s, NULL);
+	
+	gtk_widget_queue_draw (s->area);
+	//gtk_drawing_area_set_draw_func (GTK_DRAWING_AREA (s->area), draw_function, s, NULL);
 	
 	if(s->go == 0){
 		g_source_remove (s->tag);
@@ -333,7 +334,7 @@ static void activate (GApplication *app, gpointer user_data) {
 	
 	s->key = gtk_event_controller_key_new();
 	
-    gtk_window_set_title(GTK_WINDOW(s->window), "new");
+	gtk_window_set_title(GTK_WINDOW(s->window), "new");
 	gtk_widget_set_size_request(s->window, 800, 800);
 	//gtk_widget_set_focusable (s->window ,TRUE );
 	//gtk_window_set_default_size(GTK_WINDOW(s->window),600,600);
