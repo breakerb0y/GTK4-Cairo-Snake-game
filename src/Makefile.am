@@ -1,8 +1,8 @@
-bin_PROGRAMS = new
+bin_PROGRAMS = snake
 
-new_SOURCES = new.c
-new_CFLAGS = $(GTK_CFLAGS)
-new_LDADD = $(GTK_LIBS)
+snake_SOURCES = snake.c
+snake_CFLAGS = $(GTK_CFLAGS)
+snake_LDADD = $(GTK_LIBS)
 # new_DEPENDENCIES = libnew.la
 
 # lib_LTLIBRARIES = libnew.la
